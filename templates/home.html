@@ -10,24 +10,32 @@
     #banner {
       height: 360px;
       width: 100%;
-      object-fit: cover;
+      /* object-fit: cover; */
+      margin-top:1px;
       margin-bottom: 16px;
     }
   </style>
 </head>
 <body>
+  {% include 'navbar.html' %}
+  <img id="banner" src="static/banner1.jpg" class="img-fluid">
   <div class="container">
     <h1 class="text-center mt-4 mb-4">Carrer Page</h1>
-    <img id="banner" src="static/banner.jpg" class="img-fluid">
-    <h2 class="text-center mt-2 mb-4"">About Carrer</h2>
+    <div class="row" style="margin-bottom:16px"">
+    <div class="col-md-6">
     <p class="lead"">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur egestas ligula egestas, tincidunt turpis volutpat,             finibus urna. Donec nec mattis justo. Curabitur et orci ac odio iaculis tincidunt vel a nisi. Maecenas a pharetra felis.          Sed nec condimentum ipsum, et posuere eros. Sed ac enim turpis. Aenean vel neque elementum, fringilla eros sollicitudin,           elementum ex. Etiam imperdiet justo at erat porttitor cursus. Curabitur at consequat risus. Donec malesuada felis ac             ipsum vehicula scelerisque. Maecenas pharetra efficitur lectus id mattis. Duis sed purus lobortis, cursus tortor eu,              tristique elit. Duis non lacus pellentesque, consequat metus sed, scelerisque dolor. Vivamus bibendum sem lorem, et               viverra elit egestas sit amet. Nam id sapien at eros sagittis scelerisque. Nullam ac tincidunt</p>
+      </div>
+        <div class="d-none d-md-block col-md-6">
+          <img src="static/peopel3.jpg" style="height: 320px; border-radius:4px">"
+        </div>
+      </div>
+    </div>
     <h2 class="text-center">Open Positions</h2>
     <p>TODO - Show the jobs here</p>
     <div class="text-center">
-      <button class="btn btn-primary btn-lg"">Contact Us</button>
-      <p class="mt-4">© Copyright 2025 Tapan Behera</p>
+      <a href="mailto:elevenshelby003@gmail.com?subject=Apply job application" class="btn btn-primary btn-lg"">Contact Us</a>
     </div>
   </div>
-  
+  {% include 'footer.html' %}
 </body>
 </html>
