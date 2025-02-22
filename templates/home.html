@@ -31,7 +31,11 @@
       </div>
     </div>
     <h2 class="text-center">Open Positions</h2>
-    <p>TODO - Show the jobs here</p>
+    <div class="container">
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+    </div>
     <div class="text-center">
       <a href="mailto:elevenshelby003@gmail.com?subject=Apply job application" class="btn btn-primary btn-lg"">Contact Us</a>
     </div>
