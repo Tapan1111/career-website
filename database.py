@@ -5,5 +5,5 @@ engine = create_engine(
 )
 
 with engine.connect() as conn:
-  result = conn.execute(text("select * from jobs"))
-  print(result.all())
+    result = conn.execute(text("select * from bfvcdyjv9kinltyhh9co.jobs"))
+    print(result.all())
