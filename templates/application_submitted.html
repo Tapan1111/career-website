@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% include 'bootstrap.html' %}
+    <title>Application Submitted</title>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 100px;
+            margin-bottom: 100px;
+        }
+        .header-section {
+            background-color: #3ad96a;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px 10px 0 0;
+        }
+        .content-section {
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="header-section">
+                    <h2>Application Submission Confirmation</h2>
+                </div>
+                <div class="content-section">
+                    <p class="lead text-center">Your application for the role of {{job['title']}} has been successfully submitted.</p>
+                    <h3 class="mt-4">Application Details:</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <strong>Email:</strong> {{application.email}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>LinkedIn:</strong> {{application.linkedin}}
+                        </li>
+                        <li class="list-group-item">
+                            <strong>Message:</strong> {{application.message}}
+                        </li>
+                    </ul>
+                    <div class="text-center mt-4">
+                        <a href="/" class="btn btn-primary btn-lg">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'bootstrap.html' %}
+    <title>{{job.title}} - Career Portal</title>
+    <style>
+        #banners {
+            height: 360px;
+            width: 100%;
+            object-fit: fill;
+            margin-top:1px;
+            margin-bottom: 16px;
+        }
+        .job-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: #6c757d; 
+            border-radius: 8px;
+        }
+        .job-header {
+            border-bottom: 2px solid #77797b;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+    <img id="banners"  src="{{ url_for('static', filename='newBanner1.jpg') }}">
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Header Section -->
+                <div class="job-header">
+                    <h1 class="display-5 fw-bold text-primary">{{job.title}}</h1>
+                    <div class="d-flex align-items-center gap-2 mt-3">
+                        <span class="badge bg-success fs-6">{{job.location}}</span>
+                        {% if job.salary %}
+                        <span class="badge bg-warning text-dark fs-6">
+                            {{job.currency}} {{job.salary}}
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Main Content -->
+                <div class="job-details">
+                    <!-- Responsibilities Card -->
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header bg-secondary text-white">
+                            <h2 class="h5 mb-0">Key Responsibilities</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                {% for responsibility in job.responsibility.split("\n") %}
+                                <li class="list-group-item">{{responsibility}}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Requirements Card -->
+                    <div class="card mb-4 shadow-sm">
+                        <div class="card-header bg-secondary text-white">
+                            <h2 class="h5 mb-0">Requirements</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                {% for requirement in job.requirements.split("\n") %}
+                                <li class="list-group-item">{{requirement}}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {% include 'application_form.html' %}
+
+                    <!-- Additional Information -->
+                    <div class="mt-4 text-center">
+                        <a href="/" class="btn btn-outline-dark btn-lg">
+                            ← Back to All Positions
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+</body>
+</html>
